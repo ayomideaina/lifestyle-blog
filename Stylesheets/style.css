@@ -58,7 +58,9 @@ img{
     font-size: 1.1rem;
     color: rgb(62, 97, 62);
 }
-
+.nav-links a:hover{
+    color: rgb(88, 161, 88);
+}
 .text-box{
     display: flex;
     height: 100%;
@@ -79,7 +81,7 @@ img{
 .text-box span{
     color: rgb(101 130 101);
 }
-
+/* Nav responsiveness */
 @media screen and (max-width: 768px){
     .mobile-nav{
         display:block;
@@ -90,7 +92,18 @@ img{
     header .text-box{
         font-size: 1rem;
     }
+    .img-cat p{
+        font-size: 14px;
+        line-height: normal;
+        text-align: justify;
+    }
+    .img-cat h4{
+        font-size: 14px;
+        margin-inline: 1rem;
+    }
 }
+
+/* Section one */
 .sec-one{
     display: flex;
     justify-content: space-evenly;
@@ -124,7 +137,7 @@ img{
 .sec-two{
     /* margin-bottom: 2rem; */
     margin-inline: auto;
-    height: 100vh;
+    /* height: 100vh; */
     max-width: 100%;
 }
 .sec-two h2{
@@ -134,40 +147,48 @@ img{
     color:rgb(62, 97, 62);
 }
 .image-category{
-    display: flex;
-    gap: 2rem;
-    margin-inline:4rem;
-    padding:auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 2rem;
+     margin-inline: 3rem;
+     max-width: 100%;
 }
 .img-cat{
-    height:100px;
-    width: 25%;
+    /* height:100px; */
+    /* width: 25%; */
     /* overflow: hidden; */
 }
+
+.img-area{
+    max-width: 290px;
+    height: 400px;
+    margin-bottom: 4rem;
+    /* position: relative; */
+}
+
 .img-cat img{
-    width: 280px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 .img-cat p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 2.2rem;
     text-align: center;
 }
 .img-cat h4{
-    display: inline-block;
-    /* justify-content: center; */
-    font-weight: lighter;
-    font-size:1.2rem;
+    /* display:block; */
+    font-weight: 500;
+    font-size:1.1rem;
     color:white;
     background-color:rgb(101, 130, 101);
     text-align: center;
-    padding: 0.9rem 1.2rem;
+    padding: 0.9rem 1rem;
     position: relative;
-    top: -40px;
+    top:-40px;
     margin-inline: 4rem;
     cursor: pointer;
-    height:70px;
+    height: 70px;
 }
 .img-cat h4:hover{
     background-color: rgb(62, 97, 62);
@@ -191,6 +212,7 @@ img{
     display: grid;
     grid-template-columns: 2fr 2fr;
     gap: 3rem;
+    border-bottom: 1px solid rgb(235, 223, 223);
 }
 .sec-3-content {
     padding: 1rem;
@@ -247,39 +269,90 @@ img{
 /* Section Four */
 .sec-four-container{
     display:flex ;
-    gap: 4rem;
-    /* justify-content: center; */
-    /* max-width: 1200px; */
-    margin: 3rem;
-    padding: 2rem;
+    justify-content: space-between;
+    max-width: 100%;
+    margin-block: 3rem;
+    padding-inline: 2.5rem;
 }
-.sec-four-left, .sec-four-right{
-    width: 50%;
-    /* height: 100vh; */
+.sec-four-left {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+.sec-four-images{
+    margin-top: 2rem;
+    width: 90%;
+    position: relative;
+}
+
+.small-img{
+    width: 250px;
+    position: absolute;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    bottom: -50px;
+    right: -40px;
+    border:1.3rem solid white;
+}
+.sec-four-text{
+    text-align: justify;
+    font-family: Open Sans, sans-serif;
+    font-style: normal;
+    line-height: 25px;
+    color: rgb(51, 51, 51);
+}
+.sec-four-right{
+    width: 35%;
+    height:300px;
 }
 .sec-four-right h2{
-    font-size: 2.5rem;
-    margin-block:2.5rem 3rem;
-    font-weight: 200;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-block:2rem 1rem;
+    font-weight: 500;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     background-color:rgb(101, 130, 101);
     color: white;
 }
-.sec-four-images .large-img{
-    padding-top: 2.1rem;
+.right-wrapper{
+    padding-block: 2rem;
+    display: flex;
+    gap: 1.4rem;
+    width: 100%;
+    border-bottom: 1px solid rgb(235, 223, 223);
 }
-.sec-four-images .small-img{
-    width: 35%;
-    position: relative;
-    right: -28rem;
-    top: -15rem;
-    border: 1.3rem solid white;
-    /* height: 10px; */
+.img-links {
+    overflow: hidden;
+    width: 100%;
+    object-fit: cover;
 }
-.sec-four-text p{
-    margin-block: auto;
-    line-height: 2.1rem;
-    font-family:  Open Sans, sans-serif;
-    font-size: 1.2rem;
+.img-links img{
+    height: 100%;
+    width: 100%;
+}
+.img-links img:hover{
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.img-text h4{
+    font-family: Open Sans sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    padding-bottom: 0.5rem;
+    font-size: 1rem;
+    color: rgb(51, 51, 51);
+}
+.img-text .p2-text{
+    font-family: Open Sans sans-serif;
+    font-style: normal;
+    line-height: 27px;
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 1rem;
+    color: rgb(51, 51, 51);
 }
